@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>PHPday 2015 - Introduccion a Symfony2</title>
+		<title>PHPday 2015 - Introduccion a Symfony</title>
 
 		<meta name="description" content="Charla introductoria a Symfony2 para PHPday Uruguay 2015">
 		<meta name="author" content="Fabian Vallejos">
@@ -42,7 +42,7 @@
 			<div class="slides">
 				<section>
 					<h4>Introduccion a</h4>
-					<h1>Symfony2</h1>
+					<h1>Symfony</h1>
 					<p>
 						<small>Por <a href="http://fabianvallejos.com">Fabian Vallejos</a> / <a href="http://twitter.com/vallejosfab">@vallejosfab</a></small>
 					</p>
@@ -66,13 +66,14 @@
                         </a>
                     </section>
                     <section>
-                        <p class="fragment">Desarrollador Web desde mas o menos comienzos de siglo :)</p>
-                        <p class="fragment">Front End y Back End</p>
+                        <p class="fragment">Programador Web desde mas o menos comienzos de siglo :)</p>
+                        <p class="fragment">Front End / Back End / Mobile</p>
                         <p class="fragment">Experiencia en PHP, MySQL, JavaScript</p>
-                        <p class="fragment">Angular JS, Symfony2</p>
+                        <p class="fragment">Angular JS, Symfony</p>
                         <p class="fragment">Sysadmin / Devops</p>
                         <p class="fragment">Perl, Bash Scripting, Java, C++</p>
-                        <p class="fragment">... y otros ya pasados de moda</p>
+                        <p class="fragment">... y otros ya pasados de moda...</p>
+                        <p class="fragment">(Ej: Tcl/Tk, StarBasic, etc)</p>
 					</section>
                     <section>
                         <p>Contacto</p>
@@ -84,15 +85,15 @@
                 <section>
                     <section>
                         <h2>Agenda</h2>
-                        <p class="fragment">1. Que es Symfony2?</p>
+                        <p class="fragment">1. Que es Symfony?</p>
                         <p class="fragment">2. Instalacion / Configuracion</p>
                         <p class="fragment">3. Routing</p>
                         <p class="fragment">4. Controllers</p>
                         <p class="fragment">5. Template</p>
                         <p class="fragment">6. Request/Response</p>
-                        <p class="fragment">7. Doctrine ORM</p>
+                        <p class="fragment">6. Doctrine ORM</p>
                         <p class="fragment">7. Mejores Practicas</p>
-                        <p class="fragment">7. Ejemplo</p>
+                        <p class="fragment">8. Ejemplo</p>
                         <p class="fragment">9. Lo que se viene en Symfony3</p>
                     </section>
                     <section>
@@ -101,9 +102,10 @@
                         <p class="fragment">Forms</p>
                         <p class="fragment">Seguridad</p>
                         <p class="fragment">Traduccion</p>
-                        <p class="fragment">FOSUserBundle</p>
                         <p class="fragment">Testing</p>
                         <p class="fragment">Deploy</p>
+                        <p class="fragment">Documentacion</p>
+                        <p class="fragment">Comunidad</p>
                         <p class="fragment">... Mucho Mas!</p>
                     </section>
                     <section>
@@ -115,8 +117,10 @@
                 <section>
                     <section>
                         <h3>Que es Symfony?</h3>
-                        <p class="fragment">Framework PHP desarrollado por</p>
-                        <img class="fragment" data-src="/pics/sensiolabs-logo.jpg" alt="SensioLabs" />
+                        <p class="fragment">Framework PHP</p>
+                        <p class="fragment">desarrollado por<br/>
+                            <img data-src="/pics/sensiolabs-logo.jpg" alt="SensioLabs" />
+                        </p>
                         <p class="fragment">(de los mas usados)</p>
                         <p class="fragment">Top 3 PHP projects en GitHub</p>
                         <p class="fragment">Gran comunidad!</p>
@@ -151,31 +155,107 @@
                     </section>
                     <section>
                         <h3>Como se logra esto?</h3>
-                        <p class="fragment">1. Usa composer</p>
+                        <p class="fragment">1. Se usa composer</p>
                         <p class="fragment">(Manejador de paquetes de PHP)</p>
-                        <p class="fragment">2. Sigue estandares PSR</p>
+                        <p class="fragment">2. Se siguen estandares PSR</p>
                         <p class="fragment">(code style, interfaces, class naming, etc)</p>
                         <p class="fragment">Ver mas: <a href="http://www.php-fig.org/">http://www.php-fig.org/</a></p>
                     </section>
                     <section>
-                        <h3>Por que?</h3>
+                        <h3>Por que usar Symfony?</h3>
                         <p class="fragment">1. Gran comunidad (no estas solo)</p>
                         <p class="fragment">
                             2. Seguir standards + Aprender buenas practicas
                             <br/>
                             =
                             <br/>
-                            Probablemente seas un mejor programador
+                            <p class="fragment">Probablemente seas un mejor programador</p>
                             <br/>
-                            Mejores aplicaciones, mas seguras, mas testeadas, etc.
+                            <p class="fragment">Mejores aplicaciones, mas seguras, mejor testeadas, etc.</p>
                         </p>
-                        <p class="fragment">(code style, interfaces, class naming, etc)</p>
-                        <p class="fragment">Ver mas: <a href="http://www.php-fig.org/">http://www.php-fig.org/</a></p>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h3>Instalacion / Configuracion</h3>
+                    </section>
+                    <section>
+                        <img data-src="/pics/symfony-site.png" alt="Symfony Site" />
+                    </section>
+                    <section>
+                        <img data-src="/pics/symfony-site.png" alt="Symfony Site" />
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h3>Routing</h3>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h3>Controllers</h3>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h3>Template</h3>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h3>Request / Response</h3>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h3>Doctrine ORM</h3>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h3>Ejemplo</h3>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h3>Mejores practicas / Recomendaciones</h3>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h3>Symfony3?</h3>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h3>Resumen</h3>
                     </section>
                 </section>
 
 
-				<section>
+                <section>
+                    <h3>Gracias!</h3>
+                    <br/>
+                    <p>Preguntas?</p>
+                    <br/>
+                    <p>Twitter: <a href="http://twitter.com/vallejosfab">@vallejosfab</a></p>
+                    <p>Blog: <a href="http://fabianvallejos.com">http://fabianvallejos.com</a></p>
+                    <br/>
+                    <p>Slides: <br/><a href="https://github.com/vallejos/phpday-2015-symfony-presentation">https://github.com/vallejos/phpday-2015-symfony-presentation</a></p>
+                </section>
+
+
+                <section>
 					<h2>Touch Optimized</h2>
 					<p>
 						Presentations look great on touch devices, like mobile phones and tablets. Simply swipe through your slides.
