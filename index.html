@@ -181,10 +181,109 @@
                         <h3>Instalacion / Configuracion</h3>
                     </section>
                     <section>
+                        <h4>Requisitos</h4>
+                        <p class="fragment">PHP >= 5.3.9</p>
+                        <p class="fragment">Habilitar JSON y ctype</p>
+                        <p class="fragment">Setear <b>date.timezone</b> en el <b>php.ini</b></p>
+                    </section>
+
+                    <section>
+                        <h4>Opcionalmente</h4>
+                        <p class="fragment">PHP-XML, libxml, mbstring, Intl, y otros mas...</p>
+                        <p class="fragment">Mas info: <a href="http://symfony.com/doc/current/reference/requirements.html">http://symfony.com/doc/current/reference/requirements.html</a></p>
+                    </section>
+
+                    <section>
+                        <h4>Seteos recomendados en <b>php.ini</b></h4>
+                        <p>
+                            short_open_tag = Off
+                            <br/>
+                            magic_quotes_gpc = Off
+                            <br/>
+                            register_globals = Off
+                            <br/>
+                            session.auto_start = Off
+                        </p>
+                    </section>
+
+                    <section>
+                        <h4>Doctrine ORM</h4>
+                        <p class="fragment">Instalar PDO y el driver PDO que vayan a usar</p>
+                        <p class="fragment">(ej: pdo-mysql para usar MySQL)</p>
+                        <p class="fragment">Mal: Usar mysql_connect()</p>
+                    </section>
+
+                    <section>
+                        <h4>Descargar</h4>
                         <img data-src="/pics/symfony-site.png" alt="Symfony Site" />
                     </section>
+
                     <section>
-                        <img data-src="/pics/symfony-site.png" alt="Symfony Site" />
+                        <h4>Descargar</h4>
+                        <img data-src="/pics/install-2.png" alt="Install" />
+                    </section>
+
+                    <section data-markdown>
+                        <h2>Instalar Symfony</h2>
+
+                        <h4>Linux / Mac OS</h4>
+                        ```
+                        $ sudo curl -LsS http://symfony.com/installer \
+                          -o /usr/local/bin/symfony
+                        $ sudo chmod a+x /usr/local/bin/symfony
+                        ```
+
+                        <h4>Windows</h4>
+                        ```
+                        c:\> php -r "readfile('http://symfony.com/installer');" > symfony
+                        ```
+                    </section>
+
+                    <section data-markdown>
+                        <p>Crear un proyecto:</p>
+
+                        ```
+                        $ symfony new mi_proyecto
+                        ```
+                        <br/>
+                        <p>Usar una version especifica:</p>
+                        ```
+                        $ symfony new otro-proyecto 2.7
+                        ```
+                    </section>
+
+                    <section data-markdown>
+                        <h2>Usar un componente:</h2>
+
+                        ```
+                        $ composer require symfony/Intl
+                        ```
+                    </section>
+
+                    <section data-markdown>
+                        <h2>Instalar Composer</h2>
+
+                        <h4>Linux / Mac OS</h4>
+                        ```
+                        $ curl -sS https://getcomposer.org/installer | php
+                        $ sudo mv composer.phar /usr/local/bin/composer
+                        ```
+
+                        ```
+                        $ php installer
+                        $ sudo mv composer.phar /usr/local/bin/composer
+                        ```
+                        <br/>
+                        <h4>Windows: </h4>
+                        <p><a href="https://getcomposer.org/download">https://getcomposer.org/download</a>
+                    </section>
+
+                    <section data-markdown>
+                        <h2>Crear un proyecto:</h2>
+                        ```
+                        $ php composer.phar create-project \
+                          symfony/framework-standard-edition ruta-a-proyecto/ 2.6
+                        ```
                     </section>
                 </section>
 
