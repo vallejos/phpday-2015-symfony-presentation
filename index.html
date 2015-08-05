@@ -122,7 +122,7 @@
                             <img data-src="/pics/sensiolabs-logo.jpg" alt="SensioLabs" />
                         </p>
                         <p class="fragment">(de los mas usados)</p>
-                        <p class="fragment">Top 3 PHP projects en GitHub</p>
+                        <p class="fragment">Top 3 PHP projects en GitHub!</p>
                         <p class="fragment">Gran comunidad!</p>
                     </section>
                     <section>
@@ -194,15 +194,15 @@
                     </section>
 
                     <section>
-                        <h4>Seteos recomendados en <b>php.ini</b></h4>
-                        <p>
+                        <h4>Tip</h4>
+                        <p>Seteos recomendados en <b>php.ini</b></p>
+                        <p data-markdown>
+                            ```
                             short_open_tag = Off
-                            <br/>
                             magic_quotes_gpc = Off
-                            <br/>
                             register_globals = Off
-                            <br/>
                             session.auto_start = Off
+                            ```
                         </p>
                     </section>
 
@@ -210,17 +210,28 @@
                         <h4>Doctrine ORM</h4>
                         <p class="fragment">Instalar PDO y el driver PDO que vayan a usar</p>
                         <p class="fragment">(ej: pdo-mysql para usar MySQL)</p>
-                        <p class="fragment">Mal: Usar mysql_connect()</p>
+                        <p class="fragment">Tip: No usar mysql_connect()</p>
+                    </section>
+
+                    <section>
+                        <h4>Tip</h4>
+                        <p>Se puede verificar si tu sistema "soporta" Symfony:</p>
+                        <p>
+                            Cargar en el navegador <a href="web/config.php">web/config.php</a>
+                            <br/>
+                            <br/>o ejecutando desde la terminal:
+                            <p data-markdown>
+                                ```
+                                $ php app/check.php
+                                ```
+                            </p>
+                        </p>
                     </section>
 
                     <section>
                         <h4>Descargar</h4>
-                        <img data-src="/pics/symfony-site.png" alt="Symfony Site" />
-                    </section>
-
-                    <section>
-                        <h4>Descargar</h4>
-                        <img data-src="/pics/install-2.png" alt="Install" />
+                        <p>Ir a: <a href="http://symfony.com/download">http://symfony.com/download</a>
+                        <img height="500" data-src="/pics/install-2.png" alt="Install" />
                     </section>
 
                     <section data-markdown>
@@ -282,7 +293,7 @@
                         <h2>Crear un proyecto:</h2>
                         ```
                         $ php composer.phar create-project \
-                          symfony/framework-standard-edition ruta-a-proyecto/ 2.6
+                          symfony/framework-standard-edition ruta-a-proyecto/ 2.7
                         ```
                     </section>
                 </section>
