@@ -66,6 +66,7 @@
                         </a>
                     </section>
                     <section>
+                        <h3>Fabian Vallejos</h3>
                         <p class="fragment">Programador Web desde mas o menos comienzos de siglo :)</p>
                         <p class="fragment">Front End / Back End / Mobile</p>
                         <p class="fragment">Experiencia en PHP, MySQL, JavaScript</p>
@@ -92,9 +93,10 @@
                         <p class="fragment">5. Template</p>
                         <p class="fragment">6. Request/Response</p>
                         <p class="fragment">6. Doctrine ORM</p>
-                        <p class="fragment">7. Mejores Practicas</p>
-                        <p class="fragment">8. Ejemplo</p>
-                        <p class="fragment">9. Lo que se viene en Symfony3</p>
+                        <p class="fragment">7. Ejemplo</p>
+                    </section>
+                    <section>
+                        <p>Recomendaciones, Tips, Mejores Practicas</p>
                     </section>
                     <section>
                         <h2>Symfony es mucho mas...</h2>
@@ -116,7 +118,7 @@
 
                 <section>
                     <section>
-                        <h3>Que es Symfony?</h3>
+                        <h3>1. Que es Symfony?</h3>
                         <p class="fragment">Framework PHP</p>
                         <p class="fragment">desarrollado por<br/>
                             <img data-src="/pics/sensiolabs-logo.jpg" alt="SensioLabs" />
@@ -126,17 +128,17 @@
                         <p class="fragment">Gran comunidad!</p>
                     </section>
                     <section>
-                        <h3>Que es Symfony?</h3>
+                        <h3>1. Que es Symfony? (cont...)</h3>
                         <p class="fragment">
                             Libreria de Componentes
                             <br/>
                             <img data-src="/pics/confused-panda.jpg" alt="Confused Panda" />
                         </p>
                         <p class="fragment">Traduccion:</p>
-                        <p class="fragment">Se puede usar cualquier parte de Symfony2 en cualquier proyecto PHP</p>
+                        <p class="fragment">Se puede usar cualquier parte de Symfony en cualquier proyecto PHP</p>
                     </section>
                     <section>
-                        <h3>Componentes Symfony?</h3>
+                        <h3>Algunos componentes:</h3>
                         <p class="fragment">Asset</p>
                         <p class="fragment">Console</p>
                         <p class="fragment">Finder</p>
@@ -168,9 +170,8 @@
                             2. Seguir standards + Aprender buenas practicas
                             <br/>
                             =
-                            <br/>
-                            <p class="fragment">Probablemente seas un mejor programador</p>
-                            <br/>
+                            <p class="fragment">Probablemente seas un mejor programador ;)</p>
+                            <p class="fragment">y</p>
                             <p class="fragment">Mejores aplicaciones, mas seguras, mejor testeadas, etc.</p>
                         </p>
                     </section>
@@ -178,7 +179,7 @@
 
                 <section>
                     <section>
-                        <h3>Instalacion / Configuracion</h3>
+                        <h3>2. Instalacion / Configuracion</h3>
                     </section>
                     <section>
                         <h4>Requisitos</h4>
@@ -194,7 +195,7 @@
                     </section>
 
                     <section>
-                        <h4>Tip</h4>
+                        <h4>* Tip *</h4>
                         <p>Seteos recomendados en <b>php.ini</b></p>
                         <p data-markdown>
                             ```
@@ -207,10 +208,10 @@
                     </section>
 
                     <section>
-                        <h4>Doctrine ORM</h4>
+                        <h4>Para usar Doctrine ORM</h4>
                         <p class="fragment">Instalar PDO y el driver PDO que vayan a usar</p>
                         <p class="fragment">(ej: pdo-mysql para usar MySQL)</p>
-                        <p class="fragment">Tip: No usar mysql_connect()</p>
+                        <p class="fragment">* Tip* : No usar mysql_connect()</p>
                     </section>
 
                     <section>
@@ -229,7 +230,7 @@
                     </section>
 
                     <section>
-                        <h4>Descargar</h4>
+                        <h4>Descarga</h4>
                         <p>Ir a: <a href="http://symfony.com/download">http://symfony.com/download</a>
                         <img height="500" data-src="/pics/install-2.png" alt="Install" />
                     </section>
@@ -289,30 +290,52 @@
                         <p><a href="https://getcomposer.org/download">https://getcomposer.org/download</a>
                     </section>
 
-                    <section data-markdown>
-                        <h2>Crear un proyecto:</h2>
-                        ```
-                        $ php composer.phar create-project \
-                          symfony/framework-standard-edition ruta-a-proyecto/ 2.7
-                        ```
+                    <section>
+                        <p>Veamos nuestro primer proyecto...</p>
+                        <p class="fragment" data-markdown="">
+                            ```
+                            $ php app/console server:run
+                            ```
+                            o lo que es lo mismo:
+                            ```
+                            $ cd web
+                            $ php -S localhost:8000
+                            ```
+                        </p>
+                        <p class="fragment">(requiere PHP >= 5.4)</p>
+                        <p class="fragment">Ir a: <a href="http://localhost:8000/web_dev.php">http://localhost:8000/web_dev.php</a>
+                    </section>
+
+                </section>
+
+                <section>
+                    <section>
+                        <h3>Ejemplo:</h3>
+                        <p class="fragment">Nuestra primera pagina en PHP Symfony!</p>
+                    </section>
+                    <section>
+                        <p>2 cosas:</p>
+                        <p class="fragment">1. Crear una Ruta</p>
+                        <p class="fragment">2. Crear un Controlador</p>
+                        <p class="fragment">(ya vamos a hablar de esto a continuacion)</p>
                     </section>
                 </section>
 
                 <section>
                     <section>
-                        <h3>Routing</h3>
+                        <h3>3. Routing</h3>
                     </section>
                 </section>
 
                 <section>
                     <section>
-                        <h3>Controllers</h3>
+                        <h3>4. Controllers</h3>
                     </section>
                 </section>
 
                 <section>
                     <section>
-                        <h3>Template</h3>
+                        <h3>5. Template</h3>
                     </section>
                 </section>
 
@@ -330,19 +353,10 @@
 
                 <section>
                     <section>
-                        <h3>Ejemplo</h3>
+                        <h3>Ejemplo:</h3>
+                        <p class="fragment">Nuestra primera pagina en PHP Symfony!</p>
                     </section>
-                </section>
-
-                <section>
                     <section>
-                        <h3>Mejores practicas / Recomendaciones</h3>
-                    </section>
-                </section>
-
-                <section>
-                    <section>
-                        <h3>Symfony3?</h3>
                     </section>
                 </section>
 
