@@ -93,9 +93,9 @@
                         <p class="fragment">5. Template</p>
                         <p class="fragment">6. Request/Response</p>
                         <p class="fragment">6. Doctrine ORM</p>
-                        <p class="fragment">7. Ejemplo</p>
                     </section>
                     <section>
+                        <p>Ejemplo Symfony 2.7</p>
                         <p>Recomendaciones, Tips, Mejores Practicas</p>
                     </section>
                     <section>
@@ -314,22 +314,320 @@
                         <p class="fragment">Nuestra primera pagina en PHP Symfony!</p>
                     </section>
                     <section>
-                        <p>2 cosas:</p>
+                        <p>Basicamente necesitamos 2 cosas:</p>
                         <p class="fragment">1. Crear una Ruta</p>
                         <p class="fragment">2. Crear un Controlador</p>
-                        <p class="fragment">(ya vamos a hablar de esto a continuacion)</p>
+                        <p class="fragment">(ya vamos a hablar de esto en breve)</p>
+                    </section>
+                    <section>
+                        <p>Archivos y carpetas de ejemplo</p>
+                        <img data-src="/pics/project-folders.png" alt="Project Folders" />
+                    </section>
+                    <section>
+                        <p>Archivos y carpetas de ejemplo</p>
+                        <table>
+                            <tr>
+                                <td>
+                                    <img width="500" data-src="/pics/project-folders.png" alt="Project Folders" />
+                                </td>
+                                <td style="vertical-align: top;">
+                                    <p class="fragment">/app: configuracion, y otras cosas para que funcione la app (controla todo)</p>
+                                    <p class="fragment">/bin: binarios de composer (ignorar por ahora)</p>
+                                    <p class="fragment">/src: el codigo fuente de nuestro magia (bundles)</p>
+                                    <p class="fragment">/vendor: librerias de terceros</p>
+                                    <p class="fragment">/web: el document_root de nuestra aplicacion, css, pics, etc</p>
+                                </td>
+                            </tr>
+                        </table>
+                    </section>
+                    <section>
+                        <p>Bundle?</p>
+                        <p class="fragment">Modulo</p>
+                        <p class="fragment">Feature</p>
+                        <p class="fragment">Plugin</p>
+                        <p class="fragment">Una "parte" de la app</p>
+                        <p class="fragment">Carpeta dentro de src/</p>
+                        <p class="fragment">Ej: src/Login</p>
+                    </section>
+                    <section>
+                        <p>Archivos importantes en /app</p>
+                        <p class="fragment">/app/AppKernel.php</p>
+                        <p class="fragment">- activar nuestros bundles</p>
+                        <p class="fragment">/app/config/config.yml</p>
+                        <p class="fragment">- configurar la aplicacion, bundles y librerias</p>
+                        <p class="fragment">/app/config/routing.yml</p>
+                        <p class="fragment">- setear las rutas</p>
+                        <p class="fragment">(ignorar los demas archivos en app/config por ahora)</p>
+                        <p class="fragment">/app/Resources/views/</p>
+                        <p class="fragment">- console scripts y base.html.twig</p>
+                    </section>
+                    <section>
+                        <h2>Primeros pasos</h2>
+                        <p class="fragment">Borremos el bundle de ejemplo</p>
+                        <p class="fragment">1. borrar la carpeta del bundle</p>
+                        <p class="fragment">2. quitar la referencia de AppKernel.php</p>
+                        <p class="fragment">3. quitar la ruta de routing.yml</p>
+                    </section>
+                    <section>
+                        <h2>Primeros pasos</h2>
+                        <p class="fragment">Creemos un nuevo bundle</p>
+                        <p class="fragment">se puede hacer manualmente</p>
+                        <p class="fragment">pero es mejor usar console</p>
+                        <p class="fragment">app/console generate:bundle</p>
+                    </section>
+                    <section>
+                        <h2>generate:bundle</h2>
+                        <p class="fragment">NameSpace: PHPday/DemoBundle</p>
+                        <p class="fragment">Name: DemoBundle</p>
+                        <p class="fragment">Target Directory: (default)</p>
+                        <p class="fragment">Configuration format: yml</p>
+                        <p class="fragment">El resto de las opciones: (default)</p>
+                        <p class="fragment">(enter, enter, enter, enter)</p>
+                    </section>
+                    <section>
+                        <h2>Que paso exactamente?</h2>
+                        <p class="fragment">1. Se genero un Bundle :) (ver src/)</p>
+                        <p class="fragment">2. Se activo (ver AppKernel.php)</p>
+                        <p class="fragment">3. Se genero una ruta en app/config/routing.yml</p>
+                        <p class="fragment">(ya vamos a llegar a esto)</p>
+                        <p class="fragment">... pero antes...</p>
+                    </section>
+                    <section>
+                        <h2>* TIP *</h2>
+                        <p>Usar Git - colaboracion!</p>
+                        <p>(o cualquier otro software de control de versiones)</p>
+                        <p class="fragment">Borremos .git</p>
+                        <p class="fragment">1. borrar la carpeta .git (rm -rf .git/)</p>
+                        <p class="fragment">2. inicializar git (git init)</p>
+                        <p class="fragment">2. agregar todos los archivos (git add .)</p>
+                        <p class="fragment">2. commit (git commit)</p>
+                        <p class="fragment">2. push (git push -u)</p>
                     </section>
                 </section>
 
                 <section>
                     <section>
                         <h3>3. Routing</h3>
+                        <p class="fragment">Toda pagina web necesita una URL</p>
+                        <p class="fragment">Crear una Ruta para cada Pagina</p>
+                        <p class="fragment">Esto se hace en el archivo app/config/routing.yml</p>
+                    </section>
+                    <section>
+                        <h3>Sigamos con nuestro ejemplo</h3>
+                        <p class="fragment">En el ejemplo: app_dev.php/hello/PHPday</p>
+                        <p class="fragment">En el ejemplo: app_dev.php/hello/Montevideo</p>
+                        <p class="fragment">Esto funciona porque hay una ruta configurada</p>
+                    </section>
+                    <section data-markdown>
+                        <p>app/config/routing.yml</p>
+```
+demo:
+    resource: "@DemoBundle/Resources/config/routing.yml"
+    prefix:   /
+```
+                        <p>Donde esta la ruta /hello/PHPday ?</p>
+                    </section>
+                    <section>
+                        <p>resource: "@DemoBundle/Resources/config/routing.yml"</p>
+                        <p>resource = include</p>
+                        <p class="fragment">@ = busca en la carpeta src/</p>
+                        <p class="fragment">(donde estan todos nuestros bundles)</p>
+                    </section>
+                    <section data-markdown>
+                        <p> vemos el archivo src/DemoBundle/Resources/config/routing.yml</p>
+```
+demo_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: DemoBundle:Default:index }
+```
+                    </section>
+                    <section>
+                        <p>path:     /hello/{name}</p>
+                        <p>Va a matchear todo lo que sea /hello/*</p>
+                        <p class="fragment">Es decir, /hello/CualquierCosa</p>
+                        <p class="fragment">Probemos cambiar a: /hola/{name}</p>
+                        <p class="fragment">Y en el browser vamos a: <a href="localhost:9000/app_dev.php/hola/PHPday">app_dev.php/hola/PHPday</a></p>
+                    </section>
+                    <section>
+                        <h2>* TIP *</h2>
+                        <p>path vs pattern</p>
+                        <p class="fragment">pattern = versiones viejas de Symfony</p>
+                        <p class="fragment">pattern les va a funcionar hasta Symfony 3.0</p>
+                        <p class="fragment">Empezar a usar path</p>
+                    </section>
+                    <section data-markdown>
+                        <p> volvamos a ver el archivo de configuracion de rutas</p>
+                        <p>src/DemoBundle/Resources/config/routing.yml</p>
+```
+demo_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: DemoBundle:Default:index }
+```
+                    </section>
+                    <section>
+                        <p>La 2da parte critica es el controller por defecto</p>
+                        <p>defaults: { _controller: DemoBundle:Default:index }</p>
+                        <p class="fragment">Le dice a Symfony que controller ejecutar cuando la ruta se matchea</p>
+                        <p class="fragment">En "criollo", un controlador es una funcion PHP</p>
+                        <p class="fragment">Una funcion que construye la pagina</p>
+                        <p class="fragment">(lo veremos a continuacion)</p>
+                    </section>
+                    <section>
+                        <p>defaults: { _controller: DemoBundle:Default:index }</p>
+                        <p class="fragment">DemoBundle: el nombre del bundle</p>
+                        <p class="fragment">Default: Nombre de Clase del Controller</p>
+                        <p class="fragment">index: el nombre del Metodo</p>
+                        <p class="fragment">(todos estos terminos son tipicos de OOP)</p>
+                    </section>
+                    <section>
+                        <p>defaults: { _controller: DemoBundle:Default:index }</p>
+                        <p class="fragment">Se refiere a:</p>
+                        <p class="fragment">DemoBundle\Default\Controller::indexAction</p>
+                    </section>
+                    <section data-markdown>
+                        <p>es decir, en el archivo</p>
+```
+src/PHPday/DemoBundle/Controller/DefaultController.php
+```
+                        <p>Hay un metodo indexAction:</p>
+```
+namespace PHPday\DemoBundle\Controller;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+
+class DefaultController extends Controller {
+    public function indexAction($name) {
+        return $this->render('DemoBundle:Default:index.html.twig',
+                array('name' => $name));
+        }
+}
+```
+                    </section>
+                    <section data-markdown>
+                        <p>La variable $name proviene del archivo de configuracion de Rutas</p>
+                        <p>src/DemoBundle/Resources/config/routing.yml</p>
+```
+demo_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: DemoBundle:Default:index }
+```
+                    </section>
+                    <section data-markdown>
+                        <p>en este caso: </p>
+```
+return $this->render('DemoBundle:Default:index.html.twig',
+    array('name' => $name));
+}
+```
+                        <p>retorna un template Twig renderizado</p>
+                        <p>pasando como parametro el {name} del routing.yml</p>
+                    </section>
+                    <section data-markdown>
+                        <p>Podemos tener multiples variables en la ruta</p>
+```
+    path:     /hello/{nombre}/{ciudad}
+```
+                        <p>Y accederlas en el metodo del controlador</p>
+```
+class DefaultController extends Controller {
+    public function indexAction($ciudad, $nombre) {
+        return $this->render('DemoBundle:Default:index.html.twig',
+            array('name' => $nombre, 'city' => $ciudad));
+    }
+}
+```
+                    </section>
+                    <section data-markdown>
+                        <p>\* TIP *</p>
+```
+$ php app/console router:debug
+```
+                        <p>lista todas las rutas configuradas en la app</p>
+
+                        <p>MUY importante a la hora de empezar a trabajar en una app que ya esta hecha y no conocen!</p>
+                    </section>
+                    <section>
+                        <p>* TIP *</p>
+                        <p class="fragment">router:debug esta deprecado en Symfony 2.7</p>
+                        <p class="fragment">Se va a eliminar en Symfony 3</p>
+                        <p class="fragment">Usar debug:router</p>
                     </section>
                 </section>
-
                 <section>
                     <section>
                         <h3>4. Controllers</h3>
+                        <p class="fragment">Como se renderiza una pagina?</p>
+                        <p class="fragment">Basicamente 3 pasos:</p>
+                        <p class="fragment">1. Symfony busca la Ruta hasta que matchea un path</p>
+                        <p class="fragment">2. Symfony busca el _controller en esa Ruta</p>
+                        <p class="fragment">DemoBundle:Default:index - Se llama esa funcion</p>
+                        <p class="fragment">3. Se construye la pagina en indexAction()</p>
+                    </section>
+                    <section>
+                        <p>El Controlador es donde "programamos" cosas</p>
+                        <p class="fragment">Ej: enviar emails, consultar una DB, procesar un formulario, etc</p>
+                    </section>
+                    <section>
+                        <p>Es bien simple</p>
+                        <p class="fragment">Retorna un Symfony Response Object</p>
+                        <p class="fragment">Incluir el namespace Symfony\Component\HttpFoundation\Response</p>
+                        <p class="fragment">return new Response('Hola PHPday!!');</p>
+                    </section>
+                    <section data-markdown>
+```
+namespace PHPday\DemoBundle\Controller;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Response;
+
+class DefaultController extends Controller {
+    public function indexAction($name) {
+        return new Response('Hola PHPday!!');
+    }
+}
+```
+                    </section>
+                    <section>
+                        <p>El Controlador:</p>
+                        <p>1. Genera un contenido</p>
+                        <p>2. Pone ese contenido en un Response</p>
+                        <p>3. Retorna ese Response</p>
+                    </section>
+                    <section data-markdown>
+                        <p>Ej: Retornar un JSON</p>
+```
+public function indexAction($name) {
+    $datos = array(
+        'nombre' => $name,
+        'texto' => 'Hola PHPday!!'
+    );
+    $json = json_encode($datos);
+    return new Response($datos);
+}
+```
+                    </section>
+                    <section>
+                        <p>* TIP *</p>
+                        <p class="fragment">Setear header Content-Type: application/json</p>
+                        <p class="fragment">asi:</p>
+                    </section>
+                    <section data-markdown>
+                        <p>Ej: Retornar un JSON (de verdad)</p>
+```
+public function indexAction($name) {
+    $datos = array(
+        'nombre' => $name,
+        'texto' => 'Hola PHPday!!'
+    );
+    $json = json_encode($datos);
+    $respuesta = new Response($datos);
+    $respuesta->headers->set('Content-Type', 'application/json');
+
+    return $respuesta;
+}
+```
+                    </section>
+                    <section>
+                        <p>FELICITACIONES!</p>
+                        <p class="fragment">Ya saben programar en Symfony!!</p>
                     </section>
                 </section>
 
@@ -363,6 +661,16 @@
                 <section>
                     <section>
                         <h3>Resumen</h3>
+                    </section>
+                    <section>
+                        <h3>Que es Symfony?</h3>
+                        <p>1. Conjunto de Componentes que podemos usar en cualquier aplicacion PHP</p>
+                        <p>2. Un framework</p>
+                        <p>3. Filosofia y Comunidad</p>
+                    </section>
+                    <section>
+                        <h3>Instalacion?</h3>
+                        <p>1. Descargar de symfony.com/downloads</p>
                     </section>
                 </section>
 
