@@ -71,7 +71,7 @@
                         <p class="fragment">Programador Web desde mas o menos comienzos de siglo :)</p>
                         <p class="fragment">Front End / Back End / Mobile</p>
                         <p class="fragment">Experiencia en PHP, MySQL, JavaScript</p>
-                        <p class="fragment">Angular JS, Symfony</p>
+                        <p class="fragment">Angular JS, Symfony 2</p>
                         <p class="fragment">Sysadmin / Devops</p>
                         <p class="fragment">Perl, Bash Scripting, Java, C++</p>
                         <p class="fragment">... y otros ya pasados de moda...</p>
@@ -91,9 +91,7 @@
                         <p class="fragment">2. Instalacion / Configuracion</p>
                         <p class="fragment">3. Routing</p>
                         <p class="fragment">4. Controllers</p>
-                        <p class="fragment">5. Template</p>
-                        <p class="fragment">6. Request/Response</p>
-                        <p class="fragment">6. Doctrine ORM</p>
+                        <p class="fragment">5. Templates</p>
                     </section>
                     <section>
                         <p>Ejemplo Symfony 2.7</p>
@@ -101,14 +99,12 @@
                     </section>
                     <section>
                         <h2>Symfony es mucho mas...</h2>
-                        <p class="fragment">Bundles</p>
-                        <p class="fragment">Forms</p>
-                        <p class="fragment">Seguridad</p>
-                        <p class="fragment">Traduccion</p>
-                        <p class="fragment">Testing</p>
-                        <p class="fragment">Deploy</p>
-                        <p class="fragment">Documentacion</p>
-                        <p class="fragment">Comunidad</p>
+                        <p class="fragment">Bundles, Forms</p>
+                        <p class="fragment">Databases, Doctrine, ORM</p>
+                        <p class="fragment">Seguridad, Traduccion, Internalizacion</p>
+                        <p class="fragment">Dependency Injection</p>
+                        <p class="fragment">Assetic, Cache, Testing, Deployment</p>
+                        <p class="fragment">Documentacion, Comunidad</p>
                         <p class="fragment">... Mucho Mas!</p>
                     </section>
                     <section>
@@ -120,12 +116,12 @@
                 <section>
                     <section>
                         <h3>1. Que es Symfony?</h3>
-                        <p class="fragment">Framework PHP</p>
+                        <p class="fragment">Framework MVC PHP</p>
                         <p class="fragment">desarrollado por<br/>
                             <img data-src="/pics/sensiolabs-logo.jpg" alt="SensioLabs" />
                         </p>
                         <p class="fragment">(de los mas usados)</p>
-                        <p class="fragment">Top 3 PHP projects en GitHub!</p>
+                        <p class="fragment">Top PHP projects en GitHub!</p>
                         <p class="fragment">Gran comunidad!</p>
                     </section>
                     <section>
@@ -167,14 +163,12 @@
                     <section>
                         <h3>Por que usar Symfony?</h3>
                         <p class="fragment">1. Gran comunidad (no estas solo)</p>
-                        <p class="fragment">
-                            2. Seguir standards + Aprender buenas practicas
-                            <br/>
-                            =
-                            <p class="fragment">Probablemente seas un mejor programador ;)</p>
-                            <p class="fragment">y</p>
-                            <p class="fragment">Mejores aplicaciones, mas seguras, mejor testeadas, etc.</p>
-                        </p>
+                        <p class="fragment">(muchos problemas ya estan resueltos)</p>
+                        <p class="fragment">2. Seguir standards + Aprender buenas practicas</p>
+                        <p class="fragment">=</p>
+                        <p class="fragment">Probablemente seas un mejor programador ;)</p>
+                        <p class="fragment">y</p>
+                        <p class="fragment">Mejores aplicaciones, mas seguras, mejor testeadas, etc.</p>
                     </section>
                 </section>
 
@@ -304,7 +298,7 @@
                             ```
                         </p>
                         <p class="fragment">(requiere PHP >= 5.4)</p>
-                        <p class="fragment">Ir a: <a href="http://localhost:8000/web_dev.php">http://localhost:8000/web_dev.php</a>
+                        <p class="fragment">Ir a: <a href="http://localhost:8000/app_dev.php">http://localhost:8000/app_dev.php</a>
                     </section>
 
                 </section>
@@ -334,7 +328,7 @@
                                 <td style="vertical-align: top;">
                                     <p class="fragment">/app: configuracion, y otras cosas para que funcione la app (controla todo)</p>
                                     <p class="fragment">/bin: binarios de composer (ignorar por ahora)</p>
-                                    <p class="fragment">/src: el codigo fuente de nuestro magia (bundles)</p>
+                                    <p class="fragment">/src: el codigo fuente de nuestra magia (bundles)</p>
                                     <p class="fragment">/vendor: librerias de terceros</p>
                                     <p class="fragment">/web: el document_root de nuestra aplicacion, css, pics, etc</p>
                                 </td>
@@ -478,7 +472,7 @@ demo_homepage:
                         <p class="fragment">DemoBundle: el nombre del bundle</p>
                         <p class="fragment">Default: Nombre de Clase del Controller</p>
                         <p class="fragment">index: el nombre del Metodo</p>
-                        <p class="fragment">(todos estos terminos son tipicos de OOP)</p>
+                        <p class="fragment">(similitud con OOP?)</p>
                     </section>
                     <section>
                         <p>defaults: { _controller: DemoBundle:Default:index }</p>
@@ -636,26 +630,136 @@ public function indexAction($name) {
                     <section>
                         <h3>5. Template</h3>
                     </section>
-                </section>
+                    <section data-markdown>
+                        <p>Veamos el metodo indexAction del Controlador</p>
+```
+return $this->render('DemoBundle:Default:index.html.twig',
+        array('name' => $name));
+```
 
-                <section>
+                        <p>DemoBundle: el nombre del bundle</p>
+
+                        <p>Default: Carpeta dentro de Resources/views</p>
+
+                        <p>index.html.twig = template Twig!</p>
+                    </section>
+                    <section data-markdown>
+                        <p>Si abrimos ese archivo index.html.twig</p>
+```
+Hello {{ name }}!
+```
+
+                        <p>Este es nuestro template!</p>
+
+                        <p>Escrito en Twig</p>
+                    </section>
+                    <section data-markdown>
+                        <p>Twig es un lenguaje de templates de Symfony</p>
+```
+<h1>Hello {{ name }}!</h1>
+```
+                    </section>
                     <section>
-                        <h3>Request / Response</h3>
+                        <p>Twig tiene basicamente 2 tipos de tags</p>
+                        <p class="fragment">en el ejemplo: Hello {{ name }}!</p>
+                        <p class="fragment">{{ name }}</p>
+                        <p class="fragment">es un tag para imprimir algo (el contenido de una variable "name" en este caso)</p>
+                        <p class="fragment">esta variable "name" es pasada al template desde el controller</p>
+                        <p class="fragment">{{ }} es como el "echo" de php</p>
+                    </section>
+                    <section>
+                        <p>El otro tipo de tag es {% %}</p>
+                        <p class="fragment">es el "hacer algo"</p>
+                        <p class="fragment">Ej: loops, definir variables, etc</p>
+                        <p class="fragment">Ej: {% for i in 1..5 %}</p>
+                    </section>
+                    <section data-markdown>
+                        <p>Ej:</p>
+```
+{% for i in 1..5 %}
+    <h1>{{ i }} Hello {{ name }}!</h1>
+{% endfor %}
+```
+                    </section>
+                    <section>
+                        <p>Twig es capaz de hacer muchas cosas</p>
+                        <p class="fragment">Ver
+                            <a href="http://twig.sensiolabs.org/documentation">http://twig.sensiolabs.org/documentation</a>
+                            para ver una lista de Tags
+                        </p>
+                        <p class="fragment">Sabiendo esto basicamente ya podemos crear nuestros templates</p>
+                        <p class="fragment">y pasar variables desde el controller</p>
+                        <p class="fragment">Contenido dinamico</p>
+                    </section>
+                    <section data-markdown>
+                        <p>Hay otro tipo de tag</p>
+```
+{# Un comentario! #}
+{% for i in 1..5 %}
+    <h1>{{ i }} Hello {{ name }}!</h1>
+{% endfor %}
+```
+                    </section>
+                    <section>
+                        <p>Hay mucho mas Twig</p>
+                        <p class="fragment">Filtros: {{ name|upper }}</p>
+                        <p class="fragment">(como los pipes de la terminal)</p>
+                        <p class="fragment">Ver
+                            <a href="http://twig.sensiolabs.org/documentation">http://twig.sensiolabs.org/documentation</a>
+                            para ver una lista de Filtros
+                        </p>
+                    </section>
+                    <section>
+                        <p>Nuestro template sigue siendo bastante basico</p>
+                        <p class="fragment">Si vemos el codigo fuente vamos a ver que no se parece mucho a un html</p>
+                        <p class="fragment">Podemos extender otros templates</p>
+                        <p class="fragment">Ej: base.html.twig</p>
+                    </section>
+                    <section data-markdown>
+                        <p>Veamos como hacer esto</p>
+```
+{% extends '::base.html.twig' %}
+
+{% block body %}
+    {% for i in 1..5 %}
+        <h1>{{ i }} Hello {{ name }}!</h1>
+    {% endfor %}
+{% endblock %}
+```
+
+                        <p>Veamos el codigo fuente de la pagina ahora</p>
+                    </section>
+                    <section>
+                        <p>"extends" indica que queremos usar un template como base y acoplar el contenido de nuestro template a ese otro</p>
+                        <p>"block" indica donde queremos renderizar nuestro template</p>
+                    </section>
+                    <section>
+                        <p>si miramos base.html.twig vamos a ver que hay varios bloques predefinidos</p>
+                        <p>al usar "block body" estamos diciendo que en ese lugar queremos renderizar nuestro template</p>
+                        <p>nuestro contenido va a ir ahi en ese lugar</p>
+                        <p class="fragment">ver otros bloques en base.html.twig</p>
+                    </section>
+                    <section>
+                        <p>podemos mostrar nuestro contenido en cualquiera de esos bloques</p>
+                        <p class="fragment">podemos crear nuestros propios bloques</p>
+                        <p class="fragment">con Twig podemos personalizar nuestros HTMLs</p>
+                        <p class="fragment">y mostrar contenido generado dinamicamente en nuestras paginas</p>
                     </section>
                 </section>
 
                 <section>
                     <section>
-                        <h3>Doctrine ORM</h3>
-                    </section>
-                </section>
-
-                <section>
-                    <section>
-                        <h3>Ejemplo:</h3>
-                        <p class="fragment">Nuestra primera pagina en PHP Symfony!</p>
+                        <h3>Bonus Track!</h3>
+                        <p class="fragment">La Toolbar de Symfony 2</p>
+                        <p class="fragment">Web Debug Toolbar</p>
+                        <p class="fragment">Nos dice que controller fue usado</p>
+                        <p class="fragment">Tiempo de carga de la pagina, uso de memoria, seguridad, etc</p>
+                        <p class="fragment">Se agrega automaticamente en cada html</p>
                     </section>
                     <section>
+                        <p>Profiler</p>
+                        <p class="fragment">Timeline</p>
+                        <p class="fragment">Eventos Symfony en cada request</p>
                     </section>
                 </section>
 
@@ -667,304 +771,44 @@ public function indexAction($name) {
                         <h3>Que es Symfony?</h3>
                         <p>1. Conjunto de Componentes que podemos usar en cualquier aplicacion PHP</p>
                         <p>2. Un framework</p>
-                        <p>3. Filosofia y Comunidad</p>
+                        <p>3. Comunidad</p>
+                        <p>4. Filosofia (para los mas fanaticos)</p>
                     </section>
                     <section>
                         <h3>Instalacion?</h3>
                         <p>1. Descargar de symfony.com/downloads</p>
+                        <p>2. Seguir los pasos de la documentacion</p>
+                    </section>
+                    <section>
+                        <h3>Crear un proyecto?</h3>
+                        <p>1. symfony new mi-proyecto</p>
+                        <p>2. Agregan un bundle app/console generate:bundle</p>
+                        <p>(esto genera la Ruta y el Controlador)</p>
+                    </section>
+                    <section>
+                        <h3>Personalizar la ruta</h3>
+                        <p>1. en el archivo routing.yml</p>
+                    </section>
+                    <section>
+                        <h3>Comenzar a Programar!</h3>
+                        <p>1. empiecen en el Controlador</p>
+                    </section>
+                    <section>
+                        <h3>Usar un diseño HTML</h3>
+                        <p>1. Twig!</p>
+                        <p>2. Templates en la carpeta Resources/views de cada Bundle</p>
                     </section>
                 </section>
 
-
                 <section>
                     <h3>Gracias!</h3>
-                    <br/>
                     <p>Preguntas?</p>
                     <br/>
                     <p>Twitter: <a href="http://twitter.com/vallejosfab">@vallejosfab</a></p>
                     <p>Blog: <a href="http://fabianvallejos.com">http://fabianvallejos.com</a></p>
-                    <br/>
                     <p>Slides: <br/><a href="https://github.com/vallejos/phpday-2015-symfony-presentation">https://github.com/vallejos/phpday-2015-symfony-presentation</a></p>
+                    <p>Codigo Fuente: <br/><a href="https://github.com/vallejos/phpday-2015-symfony-demo">https://github.com/vallejos/phpday-2015-symfony-demo</a></p>
                 </section>
-
-
-                <section>
-					<h2>Touch Optimized</h2>
-					<p>
-						Presentations look great on touch devices, like mobile phones and tablets. Simply swipe through your slides.
-					</p>
-				</section>
-
-				<section data-markdown>
-					<script type="text/template">
-						## Markdown support
-
-						Write content using inline or external Markdown.
-						Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).
-
-						```
-						<section data-markdown>
-						  ## Markdown support
-
-						  Write content using inline or external Markdown.
-						  Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).
-						</section>
-						```
-					</script>
-				</section>
-
-				<section>
-					<section id="fragments">
-						<h2>Fragments</h2>
-						<p>Hit the next arrow...</p>
-						<p class="fragment">... to step through ...</p>
-						<p><span class="fragment">... a</span> <span class="fragment">fragmented</span> <span class="fragment">slide.</span></p>
-
-						<aside class="notes">
-							This slide has fragments which are also stepped through in the notes window.
-						</aside>
-					</section>
-					<section>
-						<h2>Fragment Styles</h2>
-						<p>There's different types of fragments, like:</p>
-						<p class="fragment grow">grow</p>
-						<p class="fragment shrink">shrink</p>
-						<p class="fragment fade-out">fade-out</p>
-						<p class="fragment current-visible">current-visible</p>
-						<p class="fragment highlight-red">highlight-red</p>
-						<p class="fragment highlight-blue">highlight-blue</p>
-					</section>
-				</section>
-
-				<section id="transitions">
-					<h2>Transition Styles</h2>
-					<p>
-						You can select from different transitions, like: <br>
-						<a href="?transition=none#/transitions">None</a> -
-						<a href="?transition=fade#/transitions">Fade</a> -
-						<a href="?transition=slide#/transitions">Slide</a> -
-						<a href="?transition=convex#/transitions">Convex</a> -
-						<a href="?transition=concave#/transitions">Concave</a> -
-						<a href="?transition=zoom#/transitions">Zoom</a>
-					</p>
-				</section>
-
-				<section id="themes">
-					<h2>Themes</h2>
-					<p>
-						reveal.js comes with a few themes built in: <br>
-						<!-- Hacks to swap themes after the page has loaded. Not flexible and only intended for the reveal.js demo deck. -->
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/black.css'); return false;">Black (default)</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/white.css'); return false;">White</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/league.css'); return false;">League</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/sky.css'); return false;">Sky</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/beige.css'); return false;">Beige</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/simple.css'); return false;">Simple</a> <br>
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/serif.css'); return false;">Serif</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/blood.css'); return false;">Blood</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/night.css'); return false;">Night</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/moon.css'); return false;">Moon</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/solarized.css'); return false;">Solarized</a>
-					</p>
-				</section>
-
-				<section>
-					<section data-background="#dddddd">
-						<h2>Slide Backgrounds</h2>
-						<p>
-							Set <code>data-background="#dddddd"</code> on a slide to change the background color. All CSS color formats are supported.
-						</p>
-						<a href="#" class="navigate-down">
-							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
-					</section>
-					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png">
-						<h2>Image Backgrounds</h2>
-						<pre><code>&lt;section data-background="image.png"&gt;</code></pre>
-					</section>
-					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png" data-background-repeat="repeat" data-background-size="100px">
-						<h2>Tiled Backgrounds</h2>
-						<pre><code style="word-wrap: break-word;">&lt;section data-background="image.png" data-background-repeat="repeat" data-background-size="100px"&gt;</code></pre>
-					</section>
-					<section data-background-video="https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.mp4,https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.webm" data-background-color="#000000">
-						<div style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;">
-							<h2>Video Backgrounds</h2>
-							<pre><code style="word-wrap: break-word;">&lt;section data-background-video="video.mp4,video.webm"&gt;</code></pre>
-						</div>
-					</section>
-					<section data-background="http://i.giphy.com/90F8aUepslB84.gif">
-						<h2>... and GIFs!</h2>
-					</section>
-				</section>
-
-				<section data-transition="slide" data-background="#4d7e65" data-background-transition="zoom">
-					<h2>Background Transitions</h2>
-					<p>
-						Different background transitions are available via the backgroundTransition option. This one's called "zoom".
-					</p>
-					<pre><code>Reveal.configure({ backgroundTransition: 'zoom' })</code></pre>
-				</section>
-
-				<section data-transition="slide" data-background="#b5533c" data-background-transition="zoom">
-					<h2>Background Transitions</h2>
-					<p>
-						You can override background transitions per-slide.
-					</p>
-					<pre><code style="word-wrap: break-word;">&lt;section data-background-transition="zoom"&gt;</code></pre>
-				</section>
-
-				<section>
-					<h2>Pretty Code</h2>
-					<pre><code data-trim contenteditable>
-function linkify( selector ) {
-  if( supports3DTransforms ) {
-
-    var nodes = document.querySelectorAll( selector );
-
-    for( var i = 0, len = nodes.length; i &lt; len; i++ ) {
-      var node = nodes[i];
-
-      if( !node.className ) {
-        node.className += ' roll';
-      }
-    }
-  }
-}
-					</code></pre>
-					<p>Code syntax highlighting courtesy of <a href="http://softwaremaniacs.org/soft/highlight/en/description/">highlight.js</a>.</p>
-				</section>
-
-				<section>
-					<h2>Marvelous List</h2>
-					<ul>
-						<li>No order here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-					</ul>
-				</section>
-
-				<section>
-					<h2>Fantastic Ordered List</h2>
-					<ol>
-						<li>One is smaller than...</li>
-						<li>Two is smaller than...</li>
-						<li>Three!</li>
-					</ol>
-				</section>
-
-				<section>
-					<h2>Tabular Tables</h2>
-					<table>
-						<thead>
-							<tr>
-								<th>Item</th>
-								<th>Value</th>
-								<th>Quantity</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>Apples</td>
-								<td>$1</td>
-								<td>7</td>
-							</tr>
-							<tr>
-								<td>Lemonade</td>
-								<td>$2</td>
-								<td>18</td>
-							</tr>
-							<tr>
-								<td>Bread</td>
-								<td>$3</td>
-								<td>2</td>
-							</tr>
-						</tbody>
-					</table>
-				</section>
-
-				<section>
-					<h2>Clever Quotes</h2>
-					<p>
-						These guys come in two forms, inline: <q cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						&ldquo;The nice thing about standards is that there are so many to choose from&rdquo;</q> and block:
-					</p>
-					<blockquote cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						&ldquo;For years there has been a theory that millions of monkeys typing at random on millions of typewriters would
-						reproduce the entire works of Shakespeare. The Internet has proven this theory to be untrue.&rdquo;
-					</blockquote>
-				</section>
-
-				<section>
-					<h2>Intergalactic Interconnections</h2>
-					<p>
-						You can link between slides internally,
-						<a href="#/2/3">like this</a>.
-					</p>
-				</section>
-
-				<section>
-					<h2>Speaker View</h2>
-					<p>There's a <a href="https://github.com/hakimel/reveal.js#speaker-notes">speaker view</a>. It includes a timer, preview of the upcoming slide as well as your speaker notes.</p>
-					<p>Press the <em>S</em> key to try it out.</p>
-
-					<aside class="notes">
-						Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
-					</aside>
-				</section>
-
-				<section>
-					<h2>Export to PDF</h2>
-					<p>Presentations can be <a href="https://github.com/hakimel/reveal.js#pdf-export">exported to PDF</a>, here's an example:</p>
-					<iframe src="//www.slideshare.net/slideshow/embed_code/42840540" width="445" height="355" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:3px solid #666; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
-				</section>
-
-				<section>
-					<h2>Global State</h2>
-					<p>
-						Set <code>data-state="something"</code> on a slide and <code>"something"</code>
-						will be added as a class to the document element when the slide is open. This lets you
-						apply broader style changes, like switching the page background.
-					</p>
-				</section>
-
-				<section data-state="customevent">
-					<h2>State Events</h2>
-					<p>
-						Additionally custom events can be triggered on a per slide basis by binding to the <code>data-state</code> name.
-					</p>
-					<pre><code class="javascript" data-trim contenteditable style="font-size: 18px;">
-Reveal.addEventListener( 'customevent', function() {
-	console.log( '"customevent" has fired' );
-} );
-					</code></pre>
-				</section>
-
-				<section>
-					<h2>Take a Moment</h2>
-					<p>
-						Press B or . on your keyboard to pause the presentation. This is helpful when you're on stage and want to take distracting slides off the screen.
-					</p>
-				</section>
-
-				<section>
-					<h2>Much more</h2>
-					<ul>
-						<li>Right-to-left support</li>
-						<li><a href="https://github.com/hakimel/reveal.js#api">Extensive JavaScript API</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js#auto-sliding">Auto-progression</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js#parallax-background">Parallax backgrounds</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js#keyboard-bindings">Custom keyboard bindings</a></li>
-					</ul>
-				</section>
-
-				<section style="text-align: left;">
-					<h1>THE END</h1>
-					<p>
-						- <a href="http://slides.com">Try the online editor</a> <br>
-						- <a href="https://github.com/hakimel/reveal.js">Source code &amp; documentation</a>
-					</p>
-				</section>
 
 			</div>
 
