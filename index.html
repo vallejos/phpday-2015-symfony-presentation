@@ -142,6 +142,11 @@
                         <p class="fragment">Routing</p>
                         <br/>
                         <p class="fragment">Ver mas: <a href="http://symfony.com/components">http://symfony.com/components</a></p>
+                        <aside class="notes">
+                            Asset: js, css, images
+                            Routing: mapeo de rutas a variables
+                            Finder: busca files y folders
+                        </aside>
                     </section>
                     <section>
                         <h3>Proyectos que usan componentes de Symfony:</h3>
@@ -150,6 +155,7 @@
                         <p class="fragment">Magento</p>
                         <p class="fragment">phpBB</p>
                         <p class="fragment">Joomla</p>
+                        <p class="fragment">Silex</p>
                         <p class="fragment">Ver mas: <a href="http://symfony.com/projects">http://symfony.com/projects</a></p>
                     </section>
                     <section>
@@ -623,6 +629,7 @@ public function indexAction($name) {
                     <section>
                         <p>FELICITACIONES!</p>
                         <p class="fragment">Ya saben programar en Symfony!!</p>
+                        <img class="fragment" data-src="/pics/happy-panda.png" alt="PHPday UY 2015" />
                     </section>
                 </section>
 
@@ -665,7 +672,16 @@ Hello {{ name }}!
                         <p class="fragment">{{ name }}</p>
                         <p class="fragment">es un tag para imprimir algo (el contenido de una variable "name" en este caso)</p>
                         <p class="fragment">esta variable "name" es pasada al template desde el controller</p>
-                        <p class="fragment">{{ }} es como el "echo" de php</p>
+                    </section>
+                    <section data-markdown>
+                        <p>{{ }} es como el "echo" de php</p>
+```
+echo $var;
+```
+                        =
+```
+{{ var }}
+```
                     </section>
                     <section>
                         <p>El otro tipo de tag es {% %}</p>
@@ -760,6 +776,11 @@ Hello {{ name }}!
                         <p>Profiler</p>
                         <p class="fragment">Timeline</p>
                         <p class="fragment">Eventos Symfony en cada request</p>
+                    </section>
+                    <section>
+                        <p>Mas?</p>
+                        <p><a href="http://symfony.com">http://symfony.com</a></p>
+                        <p><a href="http://twig.sensiolabs.org">http://twig.sensiolabs.org</a></p>
                     </section>
                 </section>
 
