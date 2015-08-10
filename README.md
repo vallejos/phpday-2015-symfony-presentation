@@ -16,7 +16,7 @@ La presentación estara disponible yendo a `http://localhost:8000` en el navegad
 En caso de obtener algún error, consultar la sección [Installation](#installation) de la documentación de reveal.js
 
 
-# <a name="english">Symfony 2 Introduction, PHPday UY 2015</a>
+# <a name="english">Symfony 2 Introduction, PHPday UY 2015 (in Spanish)</a>
 
 This presentation uses [reveal.js](https://github.com/hakimel/reveal.js) (Requires Node.js and Grunt.js)
 
